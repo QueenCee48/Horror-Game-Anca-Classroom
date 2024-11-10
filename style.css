@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#screen {
+    overflow: auto;
+    position: relative;
+    width: 75vw;
+    height: 100vh;
+    background-color: green;
+    background-image: radial-gradient(transparent, rgb(3, 156, 3), #035903, #002800);
+    margin: auto;
+}
+
+#scan-lines, #bezel {
+    position: fixed;
+    width: 75vw;
+    height: 100vh;
+    top: 0;
+    left: 50;
+    margin: 0;
+    pointer-events: none;
+}
+
+#bezel {
+    box-shadow: -2px -2px 8px rgb(24, 24, 24), 2px 2px 8px rgb(24, 24, 24);
+}
+
+#scan-lines {
+    opacity: 90%;
+    animation: flicker 0.01s infinite;
+    margin: 0;
+}
+
+
+@keyframes flicker {
+    0% {
+        opacity: 0.27861;
+    }
+    5% {
+        opacity: 0.34769;
+    }
+    10% {
+        opacity: 0.23604;
+    }
+    15% {
+        opacity: 0.90626;
+    }
+    20% {
+        opacity: 0.18128;
+    }
+    25% {
+        opacity: 0.83891;
+    }
+    30% {
+        opacity: 0.65583;
+    }
+    35% {
+        opacity: 0.67807;
+    }
+    40% {
+        opacity: 0.26559;
+    }
+    45% {
+        opacity: 0.84693;
+    }
+    50% {
+        opacity: 0.96019;
+    }
+    55% {
+        opacity: 0.08594;
+    }
+    60% {
+        opacity: 0.20313;
+    }
+    65% {
+        opacity: 0.71988;
+    }
+    70% {
+        opacity: 0.53455;
+    }
+    75% {
+        opacity: 0.37288;
+    }
+    80% {
+        opacity: 0.71428;
+    }
+    85% {
+        opacity: 0.70419;
+    }
+    90% {
+        opacity: 0.7003;
+    }
+    95% {
+        opacity: 0.36108;
+    }
+    100% {
+        opacity: 0.24387;
+    }
+}
+
+#content, #stats {
+    font-family: "OCR A Extended", monospace;
+    padding: 30px;
+    color: rgb(177, 253, 0);
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgb(150, 167, 124), 0 0 1em rgb(150, 167, 124),
+    0 0 0.2em rgb(150, 167, 124);
+    margin: 0;
+}
+
+.header {
+    align-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 4px 2px;
+    font-size: 30px;
+}
+
+body {
+    background-color: black;
+    cursor: none;
+}
+
+.cursor { 
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(83, 205, 46);
+    border: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* #end-img {
+    position: relative;
+    margin: auto;
+} */
+
+#end {
+    /* background: red; */
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 370px;
+    left: 980px;
+}
+
+#description {
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    display: block;
+    float: right;
+}
+
+#stats {
+    margin: 11px 11px 11px 50px;
+    display: block;
+    width: 15vw;
+    border: 3px solid #a1fc1d;
+    /* box-shadow: 3px 3px 3px #056405; */
+    padding: 17px;
+    float: left;
+}
+
+#img {
+    position:absolute;
+    top: 100;
+    left: 0;
+    width:960px; 
+    height: 430px;
+    padding:1em;
+}
+
+#asset-wrapper {
+    margin: auto;
+    position: relative;
+    width: 1000px;
+    height: 470px;
+    top: 100px;
+    background: rgb(0,0,0,40%);
+}
+
+#dialog {
+    margin: 11px 11px 11px 48px;
+    position: fixed;
+    width: 62.5vw;
+    top: 520px;
+    padding: 18px;
+    background: rgb(0,0,0,60%);
+}
+
+ul li {
+    margin-bottom: 15px;
+    list-style: none;
+}
+
+#logo {
+    max-width: 25%;
+    max-height: 15%;
+    padding: 10px 300px;
+    align-content: center;
+}
+
+h2 {
+    padding: 5px;
+}
+
+#anca-speaking {
+    position: fixed;
+  width: 50;
+  height: 50;
+  z-index: 0;
+}
