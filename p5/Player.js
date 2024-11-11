@@ -1,16 +1,16 @@
-function player(game) {
+function Player(game) {
   
   this.game = game;
   this.playerX = game.width/2;
   this.playerY = game.height/2;
     
-  playerImage = loadImage("player.png");
+  this.playerImage = loadImage("/game/player.png");
   
   this.drawPlayer = function() {
-    this.playerX = mouseX;
-    this.playerY = mouseY;
+    this.playerX = mouseX-10;
+    this.playerY = mouseY-10;
     
-    image(playerImage,this.playerX,this.playerY);
+    image(this.playerImage,this.playerX,this.playerY);
   }
   
   this.getPlayerX = function(){
