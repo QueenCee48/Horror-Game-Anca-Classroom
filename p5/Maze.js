@@ -1,40 +1,28 @@
-function maze(game) {
+function Maze(game) {
   
   this.ALPHALEVEL = 20;
   
   this.game = game;
-  mazeImage = loadImage("maze.png");
+  this.mazeImage = loadImage("/game/maze.png");
   
   this.drawMaze = function() {
-    image(mazeImage,0,0);
+    image(this.mazeImage,0,0);
     
+    textAlign(LEFT, LEFT);
+
     //start box
     fill(0,100,0);
-    textSize(30);
-    text("START",0,height/2-45);
+    textSize(25);
+    text("START",0,height/2-55);
     rectMode(CENTER);
-    fill(0,100,0);
     rect(40, height/2, 80, 80);
     
     //end box
     fill(0,100,0);
-    textSize(30);
-    text("END",width-65,height/2-45);
+    textSize(25);
+    text("END",width-65,height/2-55);
     rectMode(CENTER);
-    fill(0,100,0);
     rect(width-40, height/2, 80, 80);
-  }
-  
-  this.mazeEnd = function() {
-    // reach end
-    if (player.playerX > 868 && player.playerX < width && player.playerY > 175 && player.playerY < 255) {
-      lost = true;
-      lives -= 1;
-    }
-    else if (pixelCollision(this.maze, 0, 0, player.player, player.playerX, player.playerY)) {
-      lost = true;
-      lives -= 1;
-    }
   }
   
   this.pixelCollision = function(maze, mazeX, mazeY, player, playerX, playerY) {
@@ -112,6 +100,18 @@ function maze(game) {
     }
     
     return this.foundCollision;
+  }
+
+  this.mazeEnd = function() {
+    // reach end
+    if (player.playerX > 868 && player.playerX < width && player.playerY > 175 && player.playerY < 255) {
+      lost = true;
+      lives -= 1;
+    }
+    else if (this.pixelCollision(this.mazeImage, 0, 0, player.playerImage, player.playerX, player.playerY)) {
+      lost = true;
+      lives -= 1;
+    }
   }
   
 }
