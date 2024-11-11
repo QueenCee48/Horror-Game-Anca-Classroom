@@ -1,4 +1,4 @@
-function button(x, y, buttonWidth, buttonHeight, words) {
+function Button(x, y, buttonWidth, buttonHeight, words) {
 
   this.normalColor = color(0,100,0);
   this.hoverColor = color(179,255,108);
