@@ -10,7 +10,7 @@
 
 html {
     background: black;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #screen {
@@ -38,13 +38,21 @@ html {
     box-shadow: -2px -2px 8px rgb(24, 24, 24), 2px 2px 8px rgb(24, 24, 24);
 }
 
+/* Opacity is 0 to 1 so just set these values closer together
+and .01 is how many times all ten frames run.
+
+3 per second is more of a rule of thumb guideline for rapid bright flashes. You can play with the timing and the 
+intensity here to make the shifts less dramatic and then it might not need to be slowed down as much. But adding 
+the media query to disable it is also a good idea. I think most people with sensitivity already avoid horror games though. 
+*/
+
 #scan-lines {
     opacity: 90%;
     animation: flicker 0.01s infinite;
     margin: 0;
 }
 
-
+/*
 @keyframes flicker {
     0% {
         opacity: 0.27861;
@@ -109,7 +117,7 @@ html {
     100% {
         opacity: 0.24387;
     }
-}
+} */
 
 #content, #stats {
     font-family: "OCR A Extended", monospace;
@@ -134,14 +142,14 @@ body {
 }
 
 .cursor { 
-    width: 1rem;
-    height: 1rem;
+    width: 20px;
+    height: 20px;
     background-color: rgb(83, 205, 46);
     border: none;
     position: absolute;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* canvas {
