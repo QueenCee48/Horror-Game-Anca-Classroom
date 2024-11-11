@@ -9,60 +9,21 @@ var start;
 var attempt = 0;
 var lives = 3;
 
-// function preload() {
-//   anca1 = loadImage("anca3-1.png");
-//   anca2 = loadImage("anca3-2.png");
-//   anca3 = loadImage("anca3-3.png");
-//   mazeImage = loadImage("maze.png");
-//   playerImage = loadImage("player.png");
-// }
-
 function setup() {
 
-  // let assetWrapper = select('#asset-wrapper');
-  // assetWrapper.child(gameContainer);
-
-  // let body = select('body');
-  // body.child(gameContainer);
-  
   var canvas = createCanvas(960,430);
   noCursor();
   reset();
   background(255);
 
   let gameContainer = createDiv();
-
   gameContainer.id("game-container");
-
   gameContainer.child(canvas);
-
-  // let mazeContainer = createDiv();
-  let buttonContainer = createDiv();
-  let playerContainer = createDiv();
-  
-  // mazeContainer.id("maze-container");
-  buttonContainer.id("button-container")
-  playerContainer.id("player-container")
-
-  // gameContainer.child(mazeContainer);
-  gameContainer.child(buttonContainer);
-  gameContainer.child(playerContainer);
-
-  // let mazeImageContainer = createImg();
-  // mazeImageContainer.id("maze-image-container")
-  // mazeImageContainer.child(maze.mazeImage);
-  
-  // mazeContainer.child(maze);
-  // mazeContainer.child(mazeImageContainer);
-  
-  buttonContainer.child(gameOver.restartButton);
-  buttonContainer.child(gameStart.startButton);
-  playerContainer.child(player);
 }
 
 function reset() {
-  player = new player(this);
-  maze = new maze(this);
+  this.player = new Player(this);
+  this.maze = new Maze(this);
   start = false;
   lost = false;
 }
@@ -71,7 +32,7 @@ function draw() {
   if (!start && !lost) {
     background(0);
     if (gameStartScreen == null) {
-      gameStartScreen = new gameStart();
+      gameStartScreen = new GameStart();
     }
     gameStartScreen.draw();
     player.drawPlayer();
@@ -86,7 +47,7 @@ function draw() {
   else if (lost) {
     background(0);
     if (gameOverScreen == null) {
-      gameOverScreen = new gameOver();
+      gameOverScreen = new GameOver();
     }
     gameOverScreen.draw();
     player.drawPlayer();
@@ -117,7 +78,7 @@ function draw() {
   function mouseClicked() {
     if (!start && !lost) {
       if (gameStartScreen == null) {
-        gameStartScreen = new gameStart();
+        gameStartScreen = new GameStart();
       }
       
       if (gameStartScreen.isStartButtonPressed()) {
