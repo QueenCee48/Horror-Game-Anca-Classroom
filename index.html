@@ -4,23 +4,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="style.css" rel="stylesheet">
+        <script src="../p5.js"></script>
+        <!-- <script src="../addons/p5.sound.js"></script> -->
+        <script src="/p5/button.js"></script>
+        <script src="/p5/gameOver.js"></script>
+        <script src="/p5/gameStart.js"></script>
+        <script src="p5/maze.js"></script>
+        <script src="p5/player.js"></script>
+        <script src="p5/game.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.11.1/lib/p5.min.js"></script>
         <title>Dr. Anca's Classroom</title>
     </head>
 
     <body>
         <div class="cursor"></div>
-        <div>
+        <!-- <div>
             <embed src="/horror.mp3" loop="true" autostart="true" width="2">
-        </div>
+        </div> -->
 
         <div id="screen">
             <img src="scanlines.png" id="scan-lines" alt="">
-            <img src="bezel.png" id="bezel" alt="">
+            
             <div class="scan-bar">
-                <div class="scan">
-        
-                </div>
+                <div class="scan"></div>
             </div>
+
             <div id="content">
         
                 <div class="header">
@@ -35,35 +43,38 @@
                     <p> Filler </p>
                 </div>
 
-                <div id="start">
+                <!-- <div id="start">
 
-                </div>
+                </div> -->
 
                 <div id="asset-wrapper">
-                    <img id="img" src="mazeScreenshot.png" />
+                    <!-- <img id="img" src="mazeScreenshot.png" /> -->
+                    <!-- <canvas></canvas> -->
+                    <!-- <div id="game-container"></div> -->
                 </div>
 
-                <div id="end">
+                <!-- <div id="end">
                     
-                </div>
+                </div> -->
 
                 <div id="dialog">
                     <p> Dr. Anca:
                         <br/><br/>
                         Welcome to my classroom!
-                        <img id="anca-speaking" src="/game/anca_STAGE1.gif" />
+                        <!-- <img id="anca-speaking" src="/game/anca_STAGE1.gif" /> -->
                     </p>
                 </div>
         
-                <div id="end-img-wrap">
+                <!-- <div id="end-img-wrap">
                     <img id="end-img" src="" />
-                </div>
+                </div> -->
         
             </div>
-        
+
+            <img src="bezel.png" id="bezel" alt="">
         </div>
 
-        <script src="script.js"></script>
+        <script src="script.js"></script>  
     </body>
 
     <footer>
